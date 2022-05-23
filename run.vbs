@@ -5,5 +5,6 @@ Set WshShell = CreateObject("WScript.shell")
 For i = 0 to 50
     WshShell.SendKeys(chr(175))
 Next
-WshShell.run "CMD /C start chrome.exe " & URL & "",0,False
+WScript.Sleep 10000
+WshShell.run "CMD /C start " & URL & "",0,False
 Loop

